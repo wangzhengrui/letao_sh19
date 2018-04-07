@@ -59,27 +59,65 @@
     <!-- 路径导航 -->
     <ol class="breadcrumb">
       <li><a href="index.html">管理系统</a></li>
-      <li class="active">首页</li>
+      <li class="active">分类管理</li>
+      <li class="active">一级分类</li>
     </ol>
+
+    <button class="btn btn-default mb_20" id="addBtn" >添加分类</button>
+
+    <div class="lt_content">
+      <table class="table table-bordered table-hover">
+        <thead>
+          <tr>
+            <th width="20%">序号</th>
+            <th width="80%">用户名</th>
+          </tr>
+        </thead>
+        <tbody>
+         <!--刨个坑-->
+        </tbody>
+      </table>
+
+      <div class="text-right">
+        <ul id="paginator"></ul>
+      </div>
+
+
+
+    </div>
+
+
+
+
 
   </div>
 </div>
 
 <!-- 登录退出的模态框,  配置 data-dismiss="modal" 可以关闭模态框 -->
-<div class="modal fade" id="logoutModal">
+<div class="modal fade" id="firstModal">
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
-        <h4 class="modal-title">温馨提示</h4>
+        <h4 class="modal-title">添加分类</h4>
       </div>
       <div class="modal-body">
-        <p class="red"><i class="glyphicon glyphicon-info-sign"></i>您确定要退出后台管理系统吗？</p>
+        <form id="form" >
+          <div class="form-group">
+            <input type="text" name="categoryname" class="form-control"  placeholder="请输入一级分类名称">
+          </div>
+
+
+        </form>
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-        <button type="button" class="btn btn-primary" id="logoutBtn">退出</button>
+        <!-- html5 新增 form 属性, 可以让表单外的按钮, 与表单关联起来(就相当于是写在了表单里面)-->
+
+        <button type="submit" class="btn btn-primary" form="form" >添加</button>
       </div>
+
     </div>
   </div>
 </div>
@@ -91,9 +129,27 @@
 <script src="lib/jquery/jquery.js"></script>
 <script src="lib/bootstrap/js/bootstrap.js"></script>
 <script src="lib/bootstrap-validator/js/bootstrapValidator.js"></script>
+<script src="lib/bootstrap-paginator/bootstrap-paginator.js"></script>
+<script src="lib/artTemplate/template-web.js"></script>
 <script src="lib/nprogress/nprogress.js"></script>
 <script src="js/common.js"></script>
+<script src="js/first.js"></script>
+
+
+<!--一级标题模板-->
+<script type="text/html" id="firstTpl">
+{{ each rows v i}}
+  <tr>
+    <td>{{(page-1)*size+(i+1)}}</td>
+    <td>{{ v.categoryName }}</td>
+  </tr>
+{{ /each }}
+
+</script>
+
+
 </body>
+
 </html>
 
 </body>

@@ -158,18 +158,14 @@ a:active {
 }
 
 
-
-
-
-
-
-
-
 /* lt_main 结束 */
 
 .lt_content .table th,
 .lt_content .table td{
   text-align:center;
+}
+.mb_20{
+  margin-bottom:20px;
 }
 
 

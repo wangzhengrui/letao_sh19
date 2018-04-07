@@ -27,7 +27,7 @@ if(location.href.indexOf("login.html")===-1){
     url:"/employee/checkRootLogin",
     type:"get",
     success:function(info){
-      console.log(info);
+      //console.log(info);
       if(info.success){
         //什么也不干
       }
