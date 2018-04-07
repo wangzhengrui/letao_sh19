@@ -18,6 +18,36 @@ $(document).ajaxStop(function(){
 
 })
 
+//在一进入页面进行登录状况获取
+//如果后端响应中设置content-Type:application/json
+//jqery自动识别，返回数据类型，当json字符串解析成对象
+if(location.href.indexOf("login.html")===-1){
+
+  $.ajax({
+    url:"/employee/checkRootLogin",
+    type:"get",
+    success:function(info){
+      console.log(info);
+      if(info.success){
+        //什么也不干
+      }
+      if(info.error==400){
+        location.href="login.html"
+      }
+
+    }
+  })
+
+
+}
+
+
+
+
+
+
+
+
 
 $(function(){
   //1.二级分类切换功能
@@ -62,24 +92,7 @@ $("#logoutBtn").click(function(){
 
 
 
-
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
