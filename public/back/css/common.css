@@ -110,9 +110,9 @@ a:active {
 
 /* lt_main 开始 */
 .lt_main {
-  height: 1000px;
+  /*height: 1000px;*/
   width: 100%;
-  background-color: pink;
+  /*background-color: pink;*/
   padding-left: 180px;
   padding-top: 50px;
   transition: all 1s;
@@ -167,7 +167,10 @@ a:active {
 
 /* lt_main 结束 */
 
-
+.lt_content .table th,
+.lt_content .table td{
+  text-align:center;
+}
 
 
 
