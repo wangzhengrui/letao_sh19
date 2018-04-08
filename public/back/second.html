@@ -62,9 +62,9 @@
       <li class="active">分类管理</li>
       <li class="active">二级分类</li>
     </ol>
-
     <div class="lt_content">
-      <table class="table table-bordered">
+      <button class="btn btn-default mb_20">添加分类</button>
+      <table class="table table-bordered table-hover">
       <thead>
         <tr>
 
@@ -75,15 +75,13 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-
-          <td>4</td>
-          <td>运动馆</td>
-          <td>匡威</td>
-          <td>4</td>
-        </tr>
+       <!--刨个坑-->
       </tbody>
       </table>
+
+      <div class="text-right">
+        <ul class="paginator"></ul>
+      </div>
 
 
     </div>
@@ -96,19 +94,42 @@
 </div>
 
 <!-- 登录退出的模态框,  配置 data-dismiss="modal" 可以关闭模态框 -->
-<div class="modal fade" id="logoutModal">
+<div class="modal fade" id="secondModal">
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
-        <h4 class="modal-title">温馨提示</h4>
+        <h4 class="modal-title">添加分类</h4>
       </div>
       <div class="modal-body">
-        <p class="red"><i class="glyphicon glyphicon-info-sign"></i>您确定要退出后台管理系统吗？</p>
-      </div>
-      <div class="modal-footer">
+        <form id="form" >
+          <div class="form-group">
+            <div class="dropdown">
+              <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                请选择一级分类
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu" >
+                <li><a href="#">Action</a></li>
+
+              </ul>
+            </div>
+
+          </div>
+          <div class="form-group">
+            <input type="text" name="brandName" class="form-control"  placeholder="请输入二级分类名称">
+          </div>
+          <div class="form-group">
+           <button class="btn btn-default mb_20">上传图片</button>
+          <div class="form-group">
+            <img src="images/none.png" width="100" alt="">
+          </div>
+
+        </form>
+
+        <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-        <button type="button" class="btn btn-primary" id="logoutBtn">退出</button>
+        <button type="button" class="btn btn-primary" >添加</button>
       </div>
     </div>
   </div>
@@ -121,8 +142,33 @@
 <script src="lib/jquery/jquery.js"></script>
 <script src="lib/bootstrap/js/bootstrap.js"></script>
 <script src="lib/bootstrap-validator/js/bootstrapValidator.js"></script>
+<script src="lib/bootstrap-paginator/bootstrap-paginator.js"></script>
 <script src="lib/nprogress/nprogress.js"></script>
+<script src="lib/artTemplate/template-web.js"></script>
 <script src="js/common.js"></script>
+<script src="js/second.js"></script>
+
+
+<!--二级分类模板-->
+<script type="text/html" id="secondTpl">
+{{ each rows v i }}
+  <tr>
+
+    <td>{{ (page-1)*size+(i+1) }}</td>
+    <td>{{ v.categoryName }}</td>
+    <td>{{ v.brandName }}</td>
+    <td>
+      <img src="{{ v.brandLogo? v.brandLogo:'images/none.jpg'}}" height="50" alt="">
+    </td>
+  </tr>
+
+{{ /each }}
+</script>
+
+
+
+
+
 </body>
 </html>
 
