@@ -2,8 +2,9 @@
 
 
 $(function(){
-
+  //当前页设为第一页
   var currentpage=1;
+  //每页有多少条
   var pageSize=5;
 
   render();
@@ -16,7 +17,7 @@ function render(){
       pageSize:pageSize
     },
     success:function(info){
-      //console.log(info);
+      console.log(info);
       var htmlstr=template("firstTpl",info);
       $(".lt_content tbody").html(htmlstr);
 
@@ -33,17 +34,7 @@ function render(){
           //重新渲染
           render();
         }
-
-
-
-
-
-
-
-
       })
-
-
     }
   })
 
@@ -66,7 +57,7 @@ function render(){
         validating: 'glyphicon glyphicon-refresh'
       },
       fields:{
-        categoryname:{
+        categoryName:{
           //校验规则
           validators:{
           //非空校验
@@ -91,6 +82,8 @@ function render(){
 
     e.preventDefault();
 
+    //console.log($('#form').serialize());
+
     $.ajax({
       url:"/category/addTopCategory",
       type:"post",
@@ -101,7 +94,7 @@ function render(){
 
           //关闭模态框
           $("#firstModal").modal("hide");
-
+          //让当前页设置为第一页
           currentpage=1;
           render();
           $('#form').data("bootstrapValidator").resetForm(true);
