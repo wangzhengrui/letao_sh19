@@ -43,6 +43,7 @@ $(function(){
 
         //用户禁用启用功能
           $(".lt_content tbody").on("click",".btn",function(){
+            //alert("haha")
               //弹出模态框
             $("#userModal").modal("show");
 
