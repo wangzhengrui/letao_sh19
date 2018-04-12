@@ -1,0 +1,19 @@
+
+
+.history{
+  padding:10px;
+}
+.history span{
+  font-size:12px;
+}
+.history_content{
+
+  border:1px dashed #ff2a00;
+}
+.history_content li{
+  padding: 0 10px;
+  border-bottom:1px dashed #ff2a00;
+}
+.history_content li:last-child{
+  border-bottom:none;
+}
