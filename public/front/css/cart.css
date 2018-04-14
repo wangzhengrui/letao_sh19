@@ -1,0 +1,40 @@
+.mui-table-cell{
+  display:block;
+}
+
+.cart_img{
+  float:left;
+  width: 60px;
+  height: 90px;
+  /*background-color: red;*/
+}
+.cart_info{
+  overflow: hidden;
+  height: 90px;
+  /*background-color: green;*/
+}
+.mui-table-view-cell p{
+  margin-bottom:5px;
+}
+.pro_brand{
+  color:#333333;
+  font-size:16px;
+
+}
+.cart_info span{
+  font-size:14px;
+}
+.price{
+  color:red;
+}
+.old{
+  color:#8F8F94;
+  text-decoration: line-through;
+}
+.shoe_size{
+  color:#8F8F94;
+
+}
+.product_size span{
+  text-align:left;
+}

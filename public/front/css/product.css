@@ -11,7 +11,7 @@
 }
 .product_money,
 .product_size,
-.product_num{
+.lt_num{
   width: 100%;
   height: 60px;
   line-height: 40px;
@@ -26,15 +26,14 @@
 
   text-decoration: line-through;
 }
-.product_size span{
-  width: 30px;
-  height: 30px;
-  padding:5px;
-  background-color: #F5F5F5;
-  border:1px solid #CCCCCC;
-  font-size:12px;
+.product_size{
+  width: 100%;
+  height: 60px;
+  line-height: 40px;
+  padding:10px;
+  border-bottom:1px solid #ccc;
 }
-.product_num span{
+.lt_num span{
   font-size:14px;
 }
 .product_desc{

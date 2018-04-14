@@ -164,3 +164,20 @@ img{
   color:#8C8C94;
   text-decoration: line-through;
 }
+
+
+/*鞋码尺寸公共样式*/
+
+.product_size span{
+  width: 30px;
+  height: 30px;
+  padding:5px;
+  background-color: #F5F5F5;
+  border:1px solid #CCCCCC;
+  font-size:12px;
+}
+.product_size span.current{
+  background-color:deepskyblue ;
+
+
+}
